@@ -1,11 +1,11 @@
 import React from 'react'
-import './SignUp.css'
+import './Signup.css'
 
 
 const SignUp = () => {
     return (<>
     <form action="/action_page.php" style={{border:"1px solid #ccc"}}>
-  <div class="container">
+  <div className="container">
     <h1>Sign Up</h1>
     <p>Please fill in this form to create an account.</p>
     <hr/>
