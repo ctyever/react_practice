@@ -15,7 +15,7 @@ const Todolist = () => {
     {todos.length !== 0 
     && todos.map(todo => (<div key = {todo.id} className = "row mb-1">
         <div className="col-sm-2">
-            <input type="checkbox" checked={todo.complete} onChange={toggleTodo.bind(null), todo.id}/>
+            <input type="checkbox" checked={todo.complete} onChange={toggleTodo.bind(null, todo.id)}/>
             {todo.complete 
             ? <span style={{textDecoration: "line-through"}}>{todo.name}</span>
             : <span>{todo.name}</span>
