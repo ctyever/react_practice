@@ -1,0 +1,5 @@
+export { default as Home, Counter } from 'templates/Home'
+export { default as User } from 'templates/User'
+export { default as Article } from 'templates/Article'
+export { default as Item } from 'templates/Item'
+export { default as Todos } from 'templates/Todos'

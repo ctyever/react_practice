@@ -1,24 +1,44 @@
-from cctv_test.models import CctvDto
-from common.services import CommonService
-import pandas as pd
+from common.services import Printer, Reader
+from common.models import FileDTO
+from common.abstracts import ReaderBase
 
 
-class CctvService(CommonService):
+class CctvService(ReaderBase):
 
-    dto = CctvDto()
+    file = ''
 
-    def new_model(self, payload):
+    def test1(self, payload):
+        self.file = FileDTO()
+        self.file.context = payload.get('context')
+        self.file.fname = payload.get('fname')
+        return self.file
 
-        this = self.dto
-        this.context = './data/'
-        this.fname = payload
-        return pd.read_csv(this.context + this.fname)
+    def csv(self, payload):
+        printer = Printer()
+        reader = Reader()
+        CctvService().
+        printer.dframe(reader.csv(self.file))
 
-    def new_model_exel(self, payload):
+    def xls(self, payload):
+        printer = Printer()
+        reader = Reader()
+        file = FileDTO()
+        file.context = payload.get('context')
+        file.fname = payload.get('fname')
+        printer.dframe(reader.xls(file))
 
-        this = self.dto
-        this.context = './data/'
-        this.fname = payload
-        return pd.read_excel(this.context + this.fname)
+    def json(self):
+        pass
+
+    def new_file(self):
+        pass
+
+    # 추상클래스에 정의되지 않은 추가 메소드
+    def test(self):
+        pass
+
+
+
+
 
 

@@ -1,0 +1,1 @@
+export { default as Schedule } from 'todos/containers/Schedule'
