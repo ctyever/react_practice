@@ -4,10 +4,10 @@ import { Login, Signup, UserDetail, UserEdit, UserList }  from 'user/components'
 import { Home, User, Counter, Article, Item, Todos } from 'templates'
 import { Nav } from 'common'
 import { BrowserRouter as Router } from 'react-router-dom'
-import { store } from 'store'
+import { TodoReducer } from 'store/index'
 import { createStore, combineReducers } from 'redux'
 import { Provider } from 'react-redux'
-const rootReducer = combineReducers(store) 
+const rootReducer = combineReducers(TodoReducer) 
 
 const App = () => {
   return (<div>

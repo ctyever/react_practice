@@ -1,3 +1,4 @@
 import { createStore } from 'redux'
-export { todoReducer } from 'store/todoreducer'
-export const store = createStore(todoReducer)
+import TodoReducer from 'store/TodoReducer'
+export { default as TodoReducer } from 'store/TodoReducer'
+export const store = createStore(TodoReducer)
